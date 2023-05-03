@@ -1,0 +1,35 @@
+.contenedor {
+  background-color: rgb(165, 232, 233);
+  max-width: 1250px;
+  width: 1400px;
+  height: 100vh;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+
+.caja {
+  background-color: brown;
+  width: 1200px;
+  height: 200px;
+  display: grid;
+  grid-template-rows: 1.5fr 1.9fr;
+  text-align: center;
+}
+
+.titulo {
+  background-color: rgb(73, 63, 207);
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+}
+
+.input {
+  background-color: aliceblue;
+  color: black;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
