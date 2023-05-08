@@ -1,0 +1,788 @@
+/* 
+Fuentes:
+font-family: 'Bebas Neue', cursive;
+font-family: 'Bruno Ace SC', cursive;
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Sigmar', cursive; 
+*/
+
+/* Contenedor general de cuerpo */
+.contenedorCuerpo {
+  /* max-width: 1600px; */
+  min-width: 300px;
+  min-height: 618px;
+  width: 85%;
+  height: 100vh;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 45% 10% 45%);
+
+  transition: 0.6s;
+}
+
+/* Escudo UNSM */
+.Escudo {
+  grid-area: 1 / 1 / 2 / 2;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Escudo img {
+  width: 60%;
+
+  position: relative;
+  left: 10%;
+}
+
+/* Texto UNSM */
+.Texto {
+  grid-area: 1 / 2 / 2 / 3;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Texto img {
+  width: 80%;
+
+  position: relative;
+  right: 20%;
+}
+
+/* Linea intermedia */
+.Linea {
+  grid-area: 2 / 1 / 3 / 3;
+
+  margin: auto;
+  width: 90%;
+}
+
+/* Caja de texto de encuesta */
+.encuestaText {
+  grid-area: 3 / 1 / 4 / 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.encuestaText h1 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 450%;
+  letter-spacing: 10px;
+  color: rgb(66, 13, 115);
+
+  transition: 0.6s ease;
+
+  position: relative;
+  top: 5%;
+}
+
+/* Caja general del formulario */
+.cajaEncuesta {
+  grid-area: 1 / 3 / 4 / 4;
+
+  min-width: 300px;
+  min-height: 427px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Plantilla de formulario */
+.formularioInicio {
+  min-height: 570px;
+  width: 85%;
+  height: 60%;
+  background-color: rgba(13, 79, 13, 0.478);
+
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-rows: repeat(3, 15% 85%);
+  transition: 0.6;
+
+  font-family: "Bebas Neue", cursive;
+}
+
+/* Encabezado del formulario */
+.titulo {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  place-items: center;
+  justify-content: center;
+
+  letter-spacing: 3px;
+  font-size: 130%;
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.832);
+  border-bottom-style: none;
+}
+
+/* Inputs del formulario */
+.input {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+
+  grid-template-rows: 0.5fr 2fr 0.6fr;
+  grid-template-columns: 1fr;
+
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.832);
+}
+
+/* Encabezado texto Ingrese sus Datos */
+.ingreseDatos {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  place-items: center;
+
+  letter-spacing: 3px;
+  font-size: 120%;
+}
+
+/* Campo donde se ingresan los datos */
+.inputDatos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+}
+
+/* Formularios Correo Electronico, Edad y Fecha */
+.Correo,
+.Edad,
+.Fecha {
+  text-align: left;
+  align-items: center;
+
+  padding: 0 8%;
+}
+
+.Correo label,
+.Edad label,
+.Fecha label {
+
+  font-size: 190%;
+  letter-spacing: 2px;
+  color: rgb(65, 4, 121);
+
+  position: relative;
+  top: 20%;
+}
+
+/* Inputs de Correo Electronico y Edad */
+.Correo input,
+.Edad input {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  width: 100%;
+  height: 20%;
+
+  font-family: "Fjalla One", sans-serif;
+  font-size: 120%;
+  letter-spacing: 3px;
+  background: none;
+  color: rgb(255, 255, 255);
+
+  cursor: pointer;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: 0px;
+  border-color: rgb(82, 188, 110);
+  transition: 0.6s;
+
+  position: relative;
+  top: 30%;
+}
+
+/* Inputs de Fecha */
+.Fecha input {
+  
+  width: 100%;
+  height: 25%;
+
+  font-family: "Fjalla One", sans-serif;
+  font-size: 120%;
+  letter-spacing: 3px;
+  background: none;
+  color: rgb(255, 255, 255);
+
+  cursor: pointer;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: 0px;
+  border-color: rgb(82, 188, 110);
+  transition: 0.6s;
+
+  position: relative;
+  top: 30%;
+}
+
+/* Efecto se activa posisionando el cursor sobre la caja */
+.Correo input:hover {
+  border-color: rgb(10, 194, 59);
+  color: rgb(34, 245, 41);
+}
+
+/* Efecto se activa dando click en la caja */
+.Correo input:focus {
+  color: rgb(34, 245, 41);
+  border-color: rgb(10, 194, 59);
+}
+
+/* Efecto se activa posisionando el cursor sobre la caja */
+.Edad input:hover {
+  color: rgb(34, 245, 41);
+  border-color: rgb(10, 194, 59);
+}
+
+/* Efecto se activa dando click en la caja */
+.Edad input:focus {
+  color: rgb(34, 245, 41);
+  border-color: rgb(10, 194, 59);
+}
+
+/* Efecto se activa posisionando el cursor sobre la caja */
+.Fecha input:hover {
+  color: rgb(34, 245, 41);
+  border-color: rgb(10, 194, 59);
+}
+
+/* Efecto se activa dando click en la caja */
+.Fecha input:focus {
+  color: rgb(34, 245, 41);
+  border-color: rgb(10, 194, 59);
+}
+
+/* Caja boton */
+.boton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo de boton */
+.boton button {
+  width: 83%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  /* border-radius: 10px; */
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(82, 188, 110);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 150%;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 4px;
+  transition: 0.6s ease;
+}
+
+/* Efecto de boton */
+.boton button:hover {
+  background-color: rgb(13, 71, 27);
+  box-shadow: 0 0 50px rgb(11, 234, 52);
+  border-color: rgb(6, 214, 44);
+}
+
+/* Medidas responsivas */
+
+@media screen and (max-width: 1740px) {
+  /* Escudo UNSM */
+  .Escudo {
+    grid-area: 1 / 1 / 2 / 2;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Escudo img {
+    width: 60%;
+
+    position: relative;
+    left: 10%;
+    top: 10%;
+  }
+
+  /* Texto UNSM */
+  .Texto {
+    grid-area: 1 / 2 / 2 / 3;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Texto img {
+    width: 80%;
+
+    position: relative;
+    right: 20%;
+    top: 10%;
+  }
+
+  /* Caja de texto de encuesta */
+  .encuestaText h1 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 350%;
+    letter-spacing: 10px;
+    color: rgb(66, 13, 115);
+
+    position: relative;
+    top: -5%;
+
+    transition: 0.6s ease;
+  }
+
+  /* Plantilla de formulario */
+  .formularioInicio {
+    min-height: 455px;
+    width: 85%;
+    height: 50%;
+
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(3, 15% 85%);
+
+    font-family: "Bebas Neue", cursive;
+  }
+
+  /* Encabezado del formulario */
+  .titulo {
+    letter-spacing: 2px;
+    font-size: 90%;
+  }
+
+  /* Encabezado texto Ingrese sus Datos */
+  .ingreseDatos {
+    letter-spacing: 2px;
+    font-size: 90%;
+  }
+
+  /* Formularios Correo Electronico, Edad y Fecha */
+  .Correo,
+  .Edad,
+  .Fecha {
+    align-items: center;
+    font-size: 75%;
+    letter-spacing: 1px;
+  }
+  .Correo input,
+  .Edad input {
+    width: 100%;
+    height: 15%;
+
+    font-size: 120%;
+    letter-spacing: 2px;
+  }
+
+  /* Inputs de Fecha */
+  .Fecha input {
+    width: 100%;
+    height: 22%;
+
+    font-size: 120%;
+    letter-spacing: 2px;
+  }
+
+  .boton button {
+    width: 80%;
+    height: 50%;
+    font-size: 110%;
+    letter-spacing: 4px;
+  }
+}
+
+@media screen and (max-width: 1460px) {
+  /* Escudo UNSM */
+  .Escudo img {
+    width: 60%;
+
+    position: relative;
+    left: 10%;
+    top: 20%;
+  }
+
+  /* Texto UNSM */
+  .Texto img {
+    width: 80%;
+
+    position: relative;
+    right: 20%;
+    top: 20%;
+  }
+
+  /* Caja de texto de encuesta */
+  .encuestaText h1 {
+    font-size: 325%;
+
+    position: relative;
+    top: -10%;
+
+    transition: 0.6s ease;
+  }
+
+  /* Plantilla de formulario */
+  .formularioInicio {
+    width: 90%;
+    height: 50%;
+  }
+
+  /* Encabezado del formulario */
+  .titulo {
+    letter-spacing: 2px;
+    font-size: 85%;
+  }
+
+  /* Encabezado texto Ingrese sus Datos */
+  .ingreseDatos {
+    letter-spacing: 2px;
+    font-size: 85%;
+  }
+
+  /* Formularios Correo Electronico, Edad y Fecha */
+  .Correo,
+  .Edad,
+  .Fecha {
+    align-items: center;
+    font-size: 70%;
+    letter-spacing: 1px;
+  }
+
+  .boton button {
+    width: 80%;
+    height: 50%;
+    font-size: 100%;
+    letter-spacing: 4px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  /* Contenedor general */
+  .contenedorCuerpo {
+    /* max-width: 1600px; */
+    min-height: 860px;
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 10% 5% 70% 15%);
+  }
+
+  .Escudo {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .Escudo img {
+    width: 30%;
+
+    position: relative;
+    left: 0%;
+    top: 13%;
+  }
+
+  /* Texto UNSM */
+  .Texto {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .Texto img {
+    width: 100%;
+
+    position: relative;
+    right: 30%;
+    top: 16%;
+  }
+
+  /* Linea intermedia */
+  .Linea {
+    grid-area: 2 / 1 / 3 / 3;
+
+    margin: auto;
+    width: 90%;
+  }
+
+  /* Caja de texto de encuesta */
+  .encuestaText {
+    grid-area: 4 / 1 / 5 / 3;
+  }
+
+  .encuestaText h1 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 250%;
+    letter-spacing: 9px;
+    color: rgb(66, 13, 115);
+
+    position: relative;
+    bottom: 3%;
+    left: 0.5%;
+
+    transition: 0.6s ease;
+  }
+
+  .formularioInicio {
+    /* min-height: 450px; */
+    width: 85%;
+    height: 87%;
+
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(3, 15% 85%);
+  }
+
+  /* Caja general del formulario */
+  .cajaEncuesta {
+    grid-area: 3 / 1 / 4 / 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Encabezado del formulario */
+  .titulo {
+    font-size: 80%;
+  }
+
+  /* Encabezado texto Ingrese sus Datos */
+  .ingreseDatos {
+    font-size: 80%;
+  }
+
+  /* Formularios Correo Electronico, Edad y Fecha */
+  .Correo,
+  .Edad,
+  .Fecha {
+    font-size: 80%;
+  }
+  .Correo input,
+  .Edad input {
+    font-size: 110%;
+  }
+
+  /* Inputs de Fecha */
+  .Fecha input {
+    font-size: 110%;
+  }
+
+  .boton button {
+    width: 80%;
+    height: 55%;
+    font-size: 120%;
+    letter-spacing: 4px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  /* Contenedor general */
+  .contenedorCuerpo {
+    /* max-width: 1600px; */
+    width: 60%;
+    height: 100vh;
+  }
+
+  .encuestaText h1 {
+    font-size: 200%;
+    letter-spacing: 8px;
+  }
+
+  .boton button {
+    width: 80%;
+    height: 50%;
+    font-size: 110%;
+    letter-spacing: 4px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* Contenedor general */
+  .contenedorCuerpo {
+    /* max-width: 1600px; */
+    height: 100vh;
+  }
+
+  .encuestaText h1 {
+    font-size: 170%;
+    letter-spacing: 5px;
+  }
+
+  /* Encabezado del formulario */
+  .titulo {
+    font-size: 70%;
+  }
+
+  /* Encabezado texto Ingrese sus Datos */
+  .ingreseDatos {
+    font-size: 70%;
+  }
+
+  /* Formularios Correo Electronico, Edad y Fecha */
+  .Correo,
+  .Edad,
+  .Fecha {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Contenedor general */
+  .contenedorCuerpo {
+    /* max-width: 1600px; */
+    width: 70%;
+    height: 100vh;
+  }
+
+  .encuestaText h1 {
+    font-size: 170%;
+    letter-spacing: 5px;
+  }
+
+  /* Encabezado del formulario */
+  .titulo {
+    font-size: 65%;
+  }
+
+  /* Encabezado texto Ingrese sus Datos */
+  .ingreseDatos {
+    font-size: 65%;
+  }
+
+  /* Formularios Correo Electronico, Edad y Fecha */
+  .Correo,
+  .Edad,
+  .Fecha {
+    font-size: 65%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* Contenedor general */
+  .contenedorCuerpo {
+    /* max-width: 1600px; */
+    width: 70%;
+    height: 100vh;
+  }
+
+  .encuestaText h1 {
+    font-size: 130%;
+    letter-spacing: 4px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  /* Contenedor general */
+  .contenedorCuerpo {
+    /* max-width: 1600px; */
+    min-height: 0px;
+    min-width: 200px;
+    width: 40%;
+    height: 90vh;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 10% 5% 70% 15%);
+  }
+
+  .Escudo img {
+    width: 35%;
+
+    position: relative;
+    left: -5%;
+    top: 0%;
+  }
+
+  /* Texto UNSM */
+  .Texto {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .Texto img {
+    width: 100%;
+
+    position: relative;
+    right: 30%;
+    top: 5%;
+  }
+
+  /* Caja de texto de encuesta */
+  .encuestaText {
+    grid-area: 4 / 1 / 5 / 3;
+  }
+
+  .encuestaText h1 {
+    font-size: 120%;
+    letter-spacing: 5px;
+
+    position: relative;
+    top: 50%;
+    left: 0.5%;
+  }
+
+  .formularioInicio {
+    /* min-height: 450px; */
+    width: 70%;
+
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(3, 15% 85%);
+
+    position: relative;
+    top: 4%;
+  }
+
+  /* Encabezado del formulario */
+  .titulo {
+    font-size: 50%;
+  }
+
+  /* Encabezado texto Ingrese sus Datos */
+  .ingreseDatos {
+    font-size: 50%;
+  }
+
+  /* Formularios Correo Electronico, Edad y Fecha */
+  .Correo,
+  .Edad,
+  .Fecha {
+    font-size: 60%;
+  }
+
+  .boton button {
+    width: 80%;
+    height: 45%;
+    font-size: 120%;
+    letter-spacing: 4px;
+  }
+}
