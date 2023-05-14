@@ -1,0 +1,37 @@
+footer {
+  width: 100%;
+  height: 110px;
+  background-color: rgb(10, 84, 20);
+  position: fixed;
+  top: 91%;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-style: solid;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-top-color: rgb(24, 183, 45);
+  border-width: 5px;
+  padding: 0.5%;
+}
+
+.textAnonimato{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 7px;
+    color: #ffffff9f;
+}
+
+.logosRedes{
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    color: rgba(142, 174, 141, 0.83);
+    margin:  0 10px;
+}
+

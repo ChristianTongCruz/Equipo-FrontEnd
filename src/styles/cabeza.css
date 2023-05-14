@@ -1,23 +1,39 @@
 header {
-    background-color: rgb(10, 84, 20);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5%;
-    box-sizing: border-box;
-    height: 90px;
-    border-style: solid;
-    border-left-style: none;
-    border-right-style: none;
-    border-top-style: none;
-    border-bottom-color:rgb(24, 183, 45);
-    border-width: 5px;
+  background-color: rgb(10, 84, 20);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30% 0 15%;
+  box-sizing: border-box;
+  height: 110px;
+  border-style: solid;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  border-bottom-color: rgb(24, 183, 45);
+  border-width: 5px;
 }
 
-.escudoCabeza img{
-    width: 5%;
+.escudoCabeza a{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.escudoCabeza img {
+  width: 10%;
+}
+
+.texto a{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.texto img {
+  width: 52%;
 }
