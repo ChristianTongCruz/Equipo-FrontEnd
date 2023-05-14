@@ -35,10 +35,11 @@ font-family: 'Sigmar', cursive;
 }
 
 .Escudo img {
-  width: 60%;
+  width: 50%;
 
   position: relative;
-  left: 10%;
+  left: 2%;
+  bottom: -40px;
 }
 
 /* Texto UNSM */
@@ -52,10 +53,12 @@ font-family: 'Sigmar', cursive;
 }
 
 .Texto img {
-  width: 80%;
+  width: 100%;
 
   position: relative;
-  right: 20%;
+  right: 22%;
+
+  bottom: -40px;
 }
 
 /* Linea intermedia */
@@ -79,12 +82,13 @@ font-family: 'Sigmar', cursive;
   font-family: "Bebas Neue", cursive;
   font-size: 450%;
   letter-spacing: 10px;
-  color: rgb(66, 13, 115);
+  /* color: rgb(66, 13, 115); */
+  color: rgb(32, 134, 9);
 
   transition: 0.6s ease;
 
   position: relative;
-  top: 5%;
+  top: 0%;
 }
 
 /* Caja general del formulario */
@@ -104,7 +108,7 @@ font-family: 'Sigmar', cursive;
   min-height: 570px;
   width: 85%;
   height: 60%;
-  background-color: rgba(13, 79, 13, 0.478);
+  background-color: rgba(61, 62, 61, 0.478);
 
   display: grid;
   grid-template-columns: repeat(1, 100%);
@@ -186,7 +190,8 @@ font-family: 'Sigmar', cursive;
 
   font-size: 190%;
   letter-spacing: 2px;
-  color: rgb(65, 4, 121);
+  /* color: rgb(65, 4, 121); */
+  color: rgb(25, 78, 15);
 
   position: relative;
   top: 20%;
@@ -213,7 +218,7 @@ font-family: 'Sigmar', cursive;
   border-left: none;
   border-right: none;
   outline: 0px;
-  border-color: rgb(82, 188, 110);
+  border-color: rgb(83, 81, 84);
   transition: 0.6s;
 
   position: relative;
@@ -237,7 +242,7 @@ font-family: 'Sigmar', cursive;
   border-left: none;
   border-right: none;
   outline: 0px;
-  border-color: rgb(82, 188, 110);
+  border-color: rgb(83, 81, 84);
   transition: 0.6s;
 
   position: relative;
@@ -246,38 +251,38 @@ font-family: 'Sigmar', cursive;
 
 /* Efecto se activa posisionando el cursor sobre la caja */
 .Correo input:hover {
-  border-color: rgb(10, 194, 59);
-  color: rgb(34, 245, 41);
+  border-color: rgb(255, 255, 255);
+  color: rgb(83, 81, 84);
 }
 
 /* Efecto se activa dando click en la caja */
 .Correo input:focus {
-  color: rgb(34, 245, 41);
-  border-color: rgb(10, 194, 59);
+  color: rgb(83, 81, 84);
+  border-color: rgb(255, 255, 255);
 }
 
 /* Efecto se activa posisionando el cursor sobre la caja */
 .Edad input:hover {
-  color: rgb(34, 245, 41);
-  border-color: rgb(10, 194, 59);
+  color: rgb(83, 81, 84);
+  border-color: rgb(255, 255, 255);
 }
 
 /* Efecto se activa dando click en la caja */
 .Edad input:focus {
-  color: rgb(34, 245, 41);
-  border-color: rgb(10, 194, 59);
+  color: rgb(83, 81, 84);
+  border-color: rgb(255, 255, 255);
 }
 
 /* Efecto se activa posisionando el cursor sobre la caja */
 .Fecha input:hover {
-  color: rgb(34, 245, 41);
-  border-color: rgb(10, 194, 59);
+  color: rgb(83, 81, 84);
+  border-color: rgb(255, 255, 255);
 }
 
 /* Efecto se activa dando click en la caja */
 .Fecha input:focus {
-  color: rgb(34, 245, 41);
-  border-color: rgb(10, 194, 59);
+  color: rgb(83, 81, 84);
+  border-color: rgb(255, 255, 255);
 }
 
 /* Caja boton */
@@ -298,7 +303,7 @@ font-family: 'Sigmar', cursive;
   /* border-radius: 10px; */
   border-style: solid;
   border-width: 2px;
-  border-color: rgb(82, 188, 110);
+  border-color: rgb(83, 81, 84);
   cursor: pointer;
   color: rgb(255, 255, 255);
   font-size: 150%;
@@ -309,9 +314,9 @@ font-family: 'Sigmar', cursive;
 
 /* Efecto de boton */
 .boton button:hover {
-  background-color: rgb(13, 71, 27);
-  box-shadow: 0 0 50px rgb(11, 234, 52);
-  border-color: rgb(6, 214, 44);
+  background-color: rgba(29, 29, 29, 0.402);
+  box-shadow: 0 0 50px rgb(231, 231, 231);
+  border-color: rgb(255, 255, 255);
 }
 
 /* Medidas responsivas */
@@ -332,7 +337,6 @@ font-family: 'Sigmar', cursive;
 
     position: relative;
     left: 10%;
-    top: 10%;
   }
 
   /* Texto UNSM */
@@ -350,7 +354,6 @@ font-family: 'Sigmar', cursive;
 
     position: relative;
     right: 20%;
-    top: 10%;
   }
 
   /* Caja de texto de encuesta */
@@ -361,7 +364,7 @@ font-family: 'Sigmar', cursive;
     color: rgb(66, 13, 115);
 
     position: relative;
-    top: -5%;
+    top: -10%;
 
     transition: 0.6s ease;
   }
@@ -432,7 +435,6 @@ font-family: 'Sigmar', cursive;
 
     position: relative;
     left: 10%;
-    top: 20%;
   }
 
   /* Texto UNSM */
@@ -441,7 +443,6 @@ font-family: 'Sigmar', cursive;
 
     position: relative;
     right: 20%;
-    top: 20%;
   }
 
   /* Caja de texto de encuesta */
@@ -510,7 +511,7 @@ font-family: 'Sigmar', cursive;
 
     position: relative;
     left: 0%;
-    top: 13%;
+    padding-bottom: 20%;
   }
 
   /* Texto UNSM */
@@ -523,7 +524,8 @@ font-family: 'Sigmar', cursive;
 
     position: relative;
     right: 30%;
-    top: 16%;
+    
+    padding-bottom: 18%;
   }
 
   /* Linea intermedia */

@@ -1,9 +1,13 @@
 import React from 'react'
+import '../../styles/cabeza.css'
+import Escudo from '../../img/Escudo.png'
 
 export default function Header() {
     return (
-        <div>
-            <h1>Header</h1>
-        </div>
+        <header>
+            <div className='escudoCabeza'>
+                <img src={Escudo} alt="escudo" />
+            </div>
+        </header>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/inicioCuerpo.css";
 import Escudo from "../../img/Escudo.png";
-import Texto from "../../img/UniversidadTexto.png";
+import TextoDos from "../../img/UniversidadTexto_2.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Cuerpo() {
@@ -23,7 +23,7 @@ export default function Cuerpo() {
         </div>
         <div className="Texto">
           <a href="https://unsm.edu.pe/" target="_blank">
-            <img src={Texto} alt="texto" />
+            <img src={TextoDos} alt="texto" />
           </a>
         </div>
         <div className="Linea">
