@@ -15,10 +15,10 @@ export default function Footer() {
       </div>
       <div className="logosRedes">
         <a href="https://www.facebook.com/unsmperu" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon className="icon" icon={faFacebook} size="2xl" />
+        <FontAwesomeIcon className="icon" icon={faFacebook} size="xl" />
         </a>
-        <a href="https://unsm.edu.pe/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="icon" icon={faGlobe} size="2xl" /></a>
-        <a href="https://www.instagram.com/unsmperu/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="icon" icon={faInstagram} size="2xl" /></a>
+        <a href="https://unsm.edu.pe/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="icon" icon={faGlobe} size="xl" /></a>
+        <a href="https://www.instagram.com/unsmperu/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="icon" icon={faInstagram} size="xl" /></a>
       </div>
     </footer>
   );
