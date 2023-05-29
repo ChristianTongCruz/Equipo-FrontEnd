@@ -2,11 +2,10 @@ footer {
   width: 100%;
   height: 10%;
   background-color: rgb(10, 84, 20);
-  position: fixed;
-  top: 90vh;
-  left: 0;
-  display: flexbox;
   justify-content: center;
+  position: fixed;
+  top: 90%;
+  left: 0;
   align-items: center;
   box-sizing: border-box;
   border-style: solid;
@@ -18,10 +17,10 @@ footer {
 }
 
 .textAnonimato {
-    width: 100%;
-  }
+  width: 100%;
+}
 
-.textAnonimato h1{
+.textAnonimato h1 {
   font-family: "Poppins", sans-serif;
   font-size: 85%;
   letter-spacing: 7px;
@@ -34,7 +33,7 @@ footer {
   align-items: center;
 
   position: relative;
-  top: 10%;
+  top: 5%;
 }
 
 .icon {
@@ -43,31 +42,31 @@ footer {
   width: 50%;
 }
 
- @media screen and (max-width: 1460px) {
-  .textAnonimato h1{
+@media screen and (max-width: 1460px) {
+  .textAnonimato h1 {
     font-size: 90%;
     letter-spacing: 4px;
   }
 }
 
 @media screen and (max-width: 1200px) {
-    .textAnonimato h1{
-      font-size: 80%;
-      letter-spacing: 3px;
-    }
-
-    .logosRedes {
-        top: 0%;
-      }
+  .textAnonimato h1 {
+    font-size: 80%;
+    letter-spacing: 3px;
   }
-  @media screen and (max-width: 893px) {
-    .textAnonimato h1{
-      font-size: 60%;
-      letter-spacing: 0px;
-    }
 
-    .icon {
-        width: 60%;
-        margin: 0 4px;
-      }
+  .logosRedes {
+    top: 0%;
   }
+}
+@media screen and (max-width: 893px) {
+  .textAnonimato h1 {
+    font-size: 60%;
+    letter-spacing: 0px;
+  }
+
+  .icon {
+    width: 60%;
+    margin: 0 4px;
+  }
+}

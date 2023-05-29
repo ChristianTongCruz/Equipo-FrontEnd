@@ -1,0 +1,207 @@
+/* Cuerpo general */
+
+.cajaSave {
+  margin: 0 10px;
+}
+
+.tituloSave {
+  width: 100%;
+  padding-bottom: 1%;
+}
+
+.tituloSave h1 {
+  font-family: "Varela Round", sans-serif;
+  font-size: 120%;
+  text-align: left;
+}
+
+.cajaOpcionesSave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Diseño general de la caja input */
+
+.opcionesSave {
+  width: 45%;
+  margin-bottom: 2%;
+}
+
+.labelSave {
+  display: grid;
+  width: 100%;
+}
+
+.cajaInputSave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3%;
+}
+
+.name {
+  width: 92%;
+  display: flex;
+
+  font-family: "Poppins", sans-serif;
+  color: aliceblue;
+  font-size: 100%;
+}
+
+/* Diseño de tipos de Input */
+
+/* Radio */
+
+.inputRadio {
+  width: 8%;
+}
+
+.inputRadio input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.361);
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(83, 83, 83, 0.361);
+  cursor: pointer;
+}
+
+.inputRadio input:hover {
+  background-color: rgba(109, 109, 109, 0.361);
+}
+
+.inputRadio input::after {
+  content: "✔";
+  font-size: 100%;
+  color: rgba(255, 255, 255, 0.76);
+  display: none;
+}
+
+.inputRadio input:checked {
+  background-color: rgba(0, 157, 8, 0.361);
+  border-color: rgba(0, 107, 5, 0.477);
+}
+
+.inputRadio input:checked::after {
+  display: block;
+}
+
+/* CheckBox */
+
+.inputCheckbox {
+  width: 8%;
+  transition: 0.6s ease;
+}
+
+.inputCheckbox input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.361);
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(83, 83, 83, 0.361);
+  cursor: pointer;
+}
+
+.inputCheckbox input:hover {
+  background-color: rgba(109, 109, 109, 0.361);
+}
+
+.inputCheckbox input::after {
+  content: "✔";
+  font-size: 100%;
+  color: rgba(255, 255, 255, 0.76);
+  display: none;
+}
+
+.inputCheckbox input:checked {
+  background-color: rgba(0, 157, 8, 0.361);
+  border-color: rgba(0, 107, 5, 0.477);
+}
+
+.inputCheckbox input:checked::after {
+  display: block;
+}
+
+/* Text */
+
+.inputText {
+  display: flex;
+  width: 100%;
+}
+
+.inputText input {
+  display: flex;
+  text-align: center;
+
+  width: 100%;
+  height: 20%;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 100%;
+  letter-spacing: 2px;
+  background: none;
+  color: aliceblue;
+
+  cursor: pointer;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: 0px;
+  border-color: rgba(99, 99, 99, 0.516);
+  transition: 0.6s;
+}
+
+.inputText input:hover {
+  border-color: aliceblue;
+  color: rgb(83, 81, 84);
+}
+
+.inputText input:focus {
+  color: rgb(83, 81, 84);
+  border-color: aliceblue;
+}
+
+/* Desplegable */
+
+.saveDesplegable{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+.saveDesplegable h1{
+  font-size: 100%;
+  font-family: "Varela Round", sans-serif;
+  color: aliceblue;
+}
+
+.selectSave {
+  width: 100%;
+  height: 3vh;
+  margin: 0 2%;
+  color: aliceblue;
+  outline: 0px;
+  background-color: rgba(24, 24, 24, 0.106);
+  cursor: pointer;
+}
+
+.selectSave option {
+  background-color: rgba(50, 49, 49, 0.46);
+}

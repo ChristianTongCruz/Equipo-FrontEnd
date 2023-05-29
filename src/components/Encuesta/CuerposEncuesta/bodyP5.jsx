@@ -1,131 +1,133 @@
-import React from "react";
-import "../../../styles/bodyP5.css";
+import React, { useState } from "react";
+import axios from "axios";
+import '../../../styles/pagesBody.css';
+
+import { ApiUrl } from "../../apiLink";
+import Retroceder from "../../Botones/Retroceder";
+import Avanzar from "../../Botones/Avanzar";
+
+import SaveRadioYBox from '../../Saves/SaveRadioYBox'
 
 export default function BodyP5() {
+
+  //Variables para guardar selecciones
+  const [medios_comunicacion_acceso_familia, setMedios_comunicacion_acceso_familia] = useState([]);
+  const [medio_transporte_utiliza_localidad, setMedio_transporte_utiliza_localidad] = useState([]);
+  const [via_predominante_localidad, setVia_predominante_localidad] = useState();
+  const [buen_estado_via, setBuen_estado_via] = useState();
+
+  //Funcion que guarda selecciones
+  const handleChangePregunta1 = (e) => {
+    const { value, checked } = e.target;
+    const valor = value.toUpperCase();
+    if (checked) {
+      setMedios_comunicacion_acceso_familia([...medios_comunicacion_acceso_familia, valor]);
+    } else {
+      setMedios_comunicacion_acceso_familia(medios_comunicacion_acceso_familia.filter((o) => o !== valor));
+    }
+  };
+
+  const handleChangePregunta2 = (e) => {
+    const { value, checked } = e.target;
+    const valor = value.toUpperCase();
+    if (checked) {
+      setMedio_transporte_utiliza_localidad([...medio_transporte_utiliza_localidad, valor]);
+    } else {
+      setMedio_transporte_utiliza_localidad(medio_transporte_utiliza_localidad.filter((o) => o !== valor));
+    }
+  };
+
+  const handleChangePregunta3 = (e) => {
+    const { value, checked } = e.target;
+    const valor = value.toUpperCase();
+    if (checked) {
+      setVia_predominante_localidad(valor);
+    }
+  };
+
+  const handleChangePregunta4 = (e) => {
+    const { value, checked } = e.target;
+    const valor = value.toUpperCase();
+    if (checked) {
+      setBuen_estado_via(valor);
+    }
+  };
+
+  //Funcion que envia las selecciones a la API
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(ApiUrl, {
+        medios_comunicacion_acceso_familia,
+        medio_transporte_utiliza_localidad,
+        via_predominante_localidad,
+        buen_estado_via,
+      })
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   return (
-    <div className="bP5">
-      <div className="contBP5">
-        <div className="tituloBP5">
+    <div className="BodyPage">
+      <div className="contBP">
+        <div className="tituloBP">
           <h1>COMUNICACIÓN INTRAFAMILIAR</h1>
         </div>
-        <div className="contForBP5">
-          <form action="">
-            <div className="cajaPregunta">
-              <label htmlFor="UnoP5">
-                1. ¿A que medios de comunicación tiene acceso su familia? (Puede
-                marcar mas de una opción)
-              </label>
-              <div className="inputsP5">
-                <div className="opcionesUnoP5">
-                  <h1>a. Radio</h1>
-                  <h1>b. Televisión</h1>
-                  <h1>c. Periodicos</h1>
-                  <h1>d. Alto parlante</h1>
-                  <h1>e. Internet</h1>
-                  <h1>Otro (Especifique)</h1>
-                </div>
-                <div className="casillasUnoP5">
-                  <input type="checkbox" name="UnoP5" id="radioP5" />
+        <div className="contFormBP">
+          <form className="formBP" onSubmit={handleSubmit}>
 
-                  <br />
-                  <input type="checkbox" name="UnoP5" id="televisionP5" />
+            {/* PREGUNTA 1 */}
+            <SaveRadioYBox
+              titulo="1. ¿A qué medios de comunicación tiene acceso la familia? (Puede marcar más de una opción)"
+              htmlFor = "pr1_P5"
+              start={0}
+              end={7}
+              className="inputCheckbox"
+              type="checkbox"
+              handle={handleChangePregunta1}
+            />
 
-                  <br />
-                  <input type="checkbox" name="UnoP5" id="periodicosP5" />
+            {/* PREGUNTA 2 */}
+            <SaveRadioYBox
+              titulo="2. ¿Qué medio de transporte utiliza para ir a otra localidad más cercana? (Puede marcar más de una opción)"
+              htmlFor = "pr2_P5"
+              start={7}
+              end={13}
+              className="inputCheckbox"
+              type="checkbox"
+              handle={handleChangePregunta2}
+            />
 
-                  <br />
-                  <input type="checkbox" name="UnoP5" id="altoParlanteP5" />
+            {/* PREGUNTA 3 */}
+            <SaveRadioYBox
+              titulo="3. ¿Cuál es la vía predominante para arribar a su localidad?"
+              htmlFor = "pr3_P5"
+              start={13}
+              end={19}
+              className="inputRadio"
+              type="radio"
+              handle={handleChangePregunta3}
+            />
 
-                  <br />
-                  <input type="checkbox" name="UnoP5" id="internetP5" />
+            {/* PREGUNTA 4 */}
+            <SaveRadioYBox
+              titulo="4. ¿Se encuentra en buen estado dicha vía?"
+              htmlFor = "pr4_P5"
+              start={19}
+              end={21}
+              className="inputRadio"
+              type="radio"
+              handle={handleChangePregunta4}
+            />
 
-                  <br />
-                  <input type="text" name="UnoP5" id="otroUnoP5" />
-                </div>
-              </div>
-            </div>
-            <div className="cajaPregunta">
-              <label htmlFor="DosP5">
-                2. ¿Que medio de transporte utiliza para ir a otra localidad más
-                cercana? (Puede marcar mas de una opción)
-              </label>
-              <div className="inputsP5">
-                <div className="opcionesDosP5">
-                  <h1>a. Moto / Mototaxi</h1>
-                  <h1>b. Bicicleta</h1>
-                  <h1>c. Carro</h1>
-                  <h1>d. Furgón / Furgoneta</h1>
-                  <h1>e. Otro (Especifique)</h1>
-                </div>
-                <div className="casillasDosP5">
-                  <input type="checkbox" name="DosP5" id="motoP5" />
-
-                  <br />
-                  <input type="checkbox" name="DosP5" id="bicicletaP5" />
-
-                  <br />
-                  <input type="checkbox" name="DosP5" id="carroP5" />
-
-                  <br />
-                  <input type="checkbox" name="DosP5" id="furgonP5" />
-
-                  <br />
-                  <input type="text" name="DosP5" id="otroDosP5" />
-                </div>
-              </div>
-            </div>
-            <div className="cajaPregunta">
-              <label htmlFor="TresP5">
-                3. ¿Cual es la vía predominante para arribar a su localidad? (Solamente puede marcar una opción)
-              </label>
-              <div className="inputsP5">
-                <div className="opcionesTresP5">
-                  <h1>a. Carretera asfaltada</h1>
-                  <h1>b. Carretera afirmada</h1>
-                  <h1>c. Trocha carrozable</h1>
-                  <h1>d. Camino de herradura</h1>
-                  <h1>e. Rio / Canal</h1>
-                  <h1>f. Otro (Especifique)</h1>
-                </div>
-                <div className="casillasTresP5">
-                  <input type="radio" name="TresP5" id="carreAsfalP5" />
-
-                  <br />
-                  <input type="radio" name="TresP5" id="carreAfirP5" />
-
-                  <br />
-                  <input type="radio" name="TresP5" id="trochaCarroP5" />
-
-                  <br />
-                  <input type="radio" name="TresP5" id="camHerraP5" />
-
-                  <br />
-                  <input type="radio" name="TresP5" id="rioCanalP5" />
-
-                  <br />
-                  <input type="text" name="TresP5" id="otroTresP5" />
-                </div>
-              </div>
-            </div>
-            <div className="cajaPregunta">
-              <label htmlFor="CuatroP5">
-              4. ¿Se encuentra en buen estado dicha vía? (Solamente puede marcar una opción)
-              </label>
-              <div className="inputsP5">
-                <div className="opcionesCuatroP5">
-                  <h1>a. Si</h1>
-                  <h1>b. No</h1>
-                </div>
-                <div className="casillasCuatroP5">
-                  <input type="radio" name="CuatroP5" id="siP5" />
-
-                  <br />
-                  <input type="radio" name="CuatroP5" id="noP5" />
-                </div>
-              </div>
-            </div>
-            <div className="botonP5">
-              <button>Enviar respuestas</button>
+            <div className="botonBP">
+              <Retroceder text="Retroceder" page="page4" />
+              <Avanzar text="Siguiente" page=""/>
             </div>
           </form>
         </div>

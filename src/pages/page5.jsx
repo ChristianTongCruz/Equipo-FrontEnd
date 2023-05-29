@@ -6,7 +6,7 @@ import "../styles/pages.css"
 
 export default function Page5() {
   return (
-    <div div className='contenedorPrincipal'>
+    <div className='contenedorPrincipal'>
       <Header />
       <BodyP5 />
       <Footer />
