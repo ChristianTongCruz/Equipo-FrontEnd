@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import "../../../styles/pagesBody.css";
@@ -8,6 +8,7 @@ import Retroceder from '../../Botones/Retroceder'
 import Avanzar from '../../Botones/Avanzar'
 
 import { ApiUrl } from "../../apiLink";
+import { getDatos } from "../../funciones";
 import SaveText from '../../Saves/SaveText'
 import SaveRadioYBox from "../../Saves/SaveRadioYBox";
 import Desplegable from "../../Saves/Desplegable";
@@ -303,3 +304,15 @@ export default function BodyP3() {
     </div>
   );
 }
+
+export const ExportedCheck3 = () => {
+  const [check, setCheck] = useState(null);
+
+  useEffect(() => {
+    getDatos(setCheck).catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
+  return check;
+};

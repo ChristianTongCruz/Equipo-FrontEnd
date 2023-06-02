@@ -70,3 +70,38 @@ footer {
     margin: 0 4px;
   }
 }
+
+@media screen and (max-height: 748px) {
+  footer {
+    min-height: 100%;
+    top: 88%;
+  }
+}
+
+@media screen and (max-height: 648px) {
+  footer {
+    min-height: 100%;
+    top: 87%;
+  }
+}
+
+@media screen and (max-height: 548px) {
+  footer {
+    min-height: 100%;
+    top: 85%;
+  }
+}
+
+@media screen and (max-height: 448px) {
+  footer {
+    min-height: 100%;
+    top: 81%;
+  }
+}
+
+@media screen and (max-height: 348px) {
+  footer {
+    min-height: 100%;
+    top: 78%;
+  }
+}

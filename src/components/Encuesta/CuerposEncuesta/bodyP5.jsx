@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import '../../../styles/pagesBody.css';
 
 import { ApiUrl } from "../../apiLink";
+import { getDatos } from "../../funciones";
 import Retroceder from "../../Botones/Retroceder";
 import Avanzar from "../../Botones/Avanzar";
 
@@ -134,3 +135,15 @@ export default function BodyP5() {
     </div>
   );
 }
+
+export const ExportedCheck5 = () => {
+  const [check, setCheck] = useState(null);
+
+  useEffect(() => {
+    getDatos(setCheck).catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
+  return check;
+};

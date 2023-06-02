@@ -184,7 +184,7 @@ export default function BodyP1() {
   );
 }
 
-export const ExportedCheck = () => {
+export const ExportedCheck1 = () => {
   const [check, setCheck] = useState(null);
 
   useEffect(() => {

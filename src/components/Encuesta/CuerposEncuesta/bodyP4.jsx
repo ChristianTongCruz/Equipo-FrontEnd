@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import '../../../styles/pagesBody.css';
 
 import { ApiUrl } from "../../apiLink";
+import { getDatos } from "../../funciones";
 import Retroceder from "../../Botones/Retroceder";
 import Avanzar from "../../Botones/Avanzar";
 
@@ -136,3 +137,15 @@ export default function BodyP4() {
     </div>
   );
 }
+
+export const ExportedCheck4 = () => {
+  const [check, setCheck] = useState(null);
+
+  useEffect(() => {
+    getDatos(setCheck).catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
+  return check;
+};

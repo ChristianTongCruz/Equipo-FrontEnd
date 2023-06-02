@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
 import "../../../styles/pagesBody.css";
@@ -9,6 +9,7 @@ import {
   sumarStates,
   elegirRadioOtros,
   elegirRadioYesOrNot,
+  getDatos,
 } from "../../funciones";
 
 import Retroceder from "../../Botones/Retroceder";
@@ -727,3 +728,15 @@ export default function BodyP2() {
     </div>
   );
 }
+
+export const ExportedCheck2 = () => {
+  const [check, setCheck] = useState(null);
+
+  useEffect(() => {
+    getDatos(setCheck).catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
+  return check;
+};

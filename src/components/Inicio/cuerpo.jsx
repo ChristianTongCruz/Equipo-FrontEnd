@@ -14,8 +14,7 @@ export default function Cuerpo() {
   //Funcion que guarda selecciones
   const handleChangePregunta1 = (e) => {
     const { value } = e.target;
-    const valor = value.toUpperCase();
-    setCorreo(valor);
+    setCorreo(value);
   };
 
   const handleChangePregunta2 = (e) => {
@@ -79,11 +78,11 @@ export default function Cuerpo() {
               <div className="inputDatos">
                 <div className="Correo">
                   <label htmlFor="correo">Correo electronico:</label>
-                  <input id="correoInp" name="correo" type="email" onChange={handleChangePregunta1} />
+                  <input id="correoInp" name="correo" type="email" autoComplete="off" onChange={handleChangePregunta1} />
                 </div>
                 <div className="Fecha">
                   <label htmlFor="fecha">Fecha actual:</label>
-                  <input id="fechaInp" name="fecha" type="date" onChange={handleChangePregunta2} />
+                  <input id="fechaInp" name="fecha" type="date" autoComplete="off" onChange={handleChangePregunta2} />
                 </div>
               </div>
               <div className="boton">

@@ -6,12 +6,14 @@
   align-items: center;
   padding: 6% 0;
   transition: 0.6s ease;
+  min-width: 100px;
 }
 
 .contBP {
   background-color: rgba(92, 90, 90, 0.447);
-  margin: 6% 0;
+  margin: 8% 0;
   width: 77%;
+  min-width: 300px;
   display: grid;
 
   border-style: solid;
@@ -66,135 +68,83 @@
 }
 
 @media screen and (max-width: 1020px) {
-  .BP5 {
+  .BodyPage {
     padding: 10% 0;
   }
 
-  .contBP5 {
+  .contBP {
     width: 80%;
   }
 
-  .tituloBP5 {
+  .tituloBP {
     font-size: 80%;
   }
 
-  .preguntaBP5 h1 {
-    font-size: 100%;
-  }
-
-  /* Inputs */
-  .opcionesBP5 label {
-    margin-bottom: 1%;
-  }
-
-  .nameBP5 {
-    font-size: 90%;
-  }
-
-  .inputBoxBP5 input {
-    width: 17px;
-    height: 17px;
-  }
-
-  .inputRadioBP5 input {
-    width: 17px;
-    height: 17px;
+  .SubTituloBP {
+    font-size: 80%;
   }
 }
 
 @media screen and (max-width: 850px) {
   /* Contenedor general */
-  .BP5 {
+  .BodyPage {
     padding: 13% 0;
   }
 
-  .tituloBP5 {
-    font-size: 70%;
-  }
-
-  .preguntaBP5 h1 {
-    font-size: 90%;
-  }
-
-  /* Inputs */
-  .nameBP5 {
+  .tituloBP {
     font-size: 80%;
-  }
-
-  .inputBoxBP5 input {
-    width: 15px;
-    height: 15px;
-    font-size: 70%;
-  }
-
-  .inputRadioBP5 input {
-    width: 15px;
-    height: 15px;
-    font-size: 70%;
   }
 }
 
 @media screen and (max-width: 680px) {
   /* Contenedor general */
-  .BP5 {
+  .BodyPage {
     padding: 18% 0;
   }
-
-  .tituloBP5 {
-    font-size: 60%;
-  }
-
-  .preguntaBP5 h1 {
-    font-size: 80%;
-  }
-
-  /* Inputs */
-  .nameBP5 {
-    font-size: 70%;
-  }
-
-  .inputBoxBP5 input {
-    width: 13px;
-    height: 13px;
-    font-size: 60%;
-  }
-
-  .inputRadioBP5 input {
-    width: 13px;
-    height: 13px;
-    font-size: 60%;
-  }
 }
+
 @media screen and (max-width: 510px) {
   /* Contenedor general */
-  /* Contenedor general */
-  .BP5 {
+  .BodyPage {
     padding: 32% 0;
   }
 
-  .tituloBP5 {
-    font-size: 55%;
+  .tituloBP {
+    font-size: 70%;
     letter-spacing: 1px;
   }
 
-  .preguntaBP5 h1 {
+  .SubTituloBP {
     font-size: 70%;
   }
+}
 
-  /* Inputs */
-  .nameBP5 {
-    font-size: 50%;
+@media screen and (max-height: 748px) {
+  .BodyPage {
+    padding-top: 40%;
   }
+}
 
-  .inputBoxBP5 input {
-    width: 10px;
-    height: 10px;
-    font-size: 50%;
+@media screen and (max-height: 648px) {
+  .BodyPage {
+    padding-top: 50%;
   }
+}
 
-  .inputRadioBP5 input {
-    width: 10px;
-    height: 10px;
-    font-size: 50%;
+@media screen and (max-height: 548px) {
+  .BodyPage {
+    padding-top: 60%;
+  }
+}
+
+@media screen and (max-height: 448px) {
+  .BodyPage {
+    padding-top: 75%;
+  }
+}
+
+@media screen and (max-height: 348px) {
+  .BodyPage {
+    padding-top: 90%;
   }
 }

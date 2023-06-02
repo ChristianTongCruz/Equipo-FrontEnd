@@ -140,6 +140,7 @@
 
 .inputText {
   display: flex;
+  justify-content: center;
   width: 100%;
 }
 
@@ -178,15 +179,14 @@
 
 /* Desplegable */
 
-.saveDesplegable{
+.saveDesplegable {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-
 }
 
-.saveDesplegable h1{
+.saveDesplegable h1 {
   font-size: 100%;
   font-family: "Varela Round", sans-serif;
   color: aliceblue;
@@ -204,4 +204,91 @@
 
 .selectSave option {
   background-color: rgba(50, 49, 49, 0.46);
+}
+
+@media screen and (max-width: 850px) {
+  /* Cuerpo general */
+
+  .tituloSave h1 {
+    font-family: "Varela Round", sans-serif;
+    font-size: 110%;
+  }
+
+  /* Diseño general de la caja input */
+
+  .opcionesSave {
+    width: 67%;
+  }
+
+  .name {
+    font-size: 90%;
+  }
+
+  /* Diseño de tipos de Input */
+
+  /* Radio */
+
+  .inputRadio {
+    width: 9%;
+  }
+
+  /* Text */
+
+  .inputText input {
+    width: 80%;
+
+    font-size: 85%;
+  }
+
+  /* Desplegable */
+
+  .saveDesplegable h1 {
+    font-size: 90%;
+    font-family: "Varela Round", sans-serif;
+    color: aliceblue;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  /* Cuerpo general */
+
+  .tituloSave h1 {
+    font-family: "Varela Round", sans-serif;
+    font-size: 110%;
+    text-align: left;
+  }
+
+  /* Diseño general de la caja input */
+
+  .opcionesSave {
+    width: 67%;
+  }
+
+  .name {
+    font-size: 90%;
+  }
+
+  /* Diseño de tipos de Input */
+
+  /* Radio */
+
+  .inputRadio {
+    width: 9%;
+  }
+
+  /* Text */
+
+  .inputText input {
+    width: 80%;
+
+    font-size: 85%;
+  }
+
+  /* Desplegable */
+
+  .saveDesplegable h1 {
+    font-size: 90%;
+    font-family: "Varela Round", sans-serif;
+    color: aliceblue;
+  }
 }
