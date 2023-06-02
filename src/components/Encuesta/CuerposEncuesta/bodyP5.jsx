@@ -4,7 +4,6 @@ import '../../../styles/pagesBody.css';
 
 import { ApiUrl } from "../../apiLink";
 import { getDatos } from "../../funciones";
-import Retroceder from "../../Botones/Retroceder";
 import Avanzar from "../../Botones/Avanzar";
 
 import SaveRadioYBox from '../../Saves/SaveRadioYBox'

@@ -12,7 +12,6 @@ import {
   getDatos,
 } from "../../funciones";
 
-import Retroceder from "../../Botones/Retroceder";
 import AvanzarSuma from "../../Botones/AvanzarSuma";
 
 import SaveRadioYBox from "../../Saves/SaveRadioYBox";

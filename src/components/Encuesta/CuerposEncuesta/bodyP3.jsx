@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import "../../../styles/pagesBody.css";
 import '../../../styles/saves.css'
 
-import Retroceder from '../../Botones/Retroceder'
 import Avanzar from '../../Botones/Avanzar'
 
 import { ApiUrl } from "../../apiLink";
