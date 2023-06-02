@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 import "../../../styles/pagesBody.css";
 import '../../../styles/saves.css'
 
@@ -126,6 +127,10 @@ export default function BodyP3() {
     }
   };
 
+  //Variable que nos permite avanzar de página
+
+  const alone = useNavigate();
+
   //Postear
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -151,6 +156,9 @@ export default function BodyP3() {
       .catch(function (error) {
         console.log(error);
       });
+
+    alone(`/page4`);
+    {/* window.location.href = `/page4` */}
   };
 
   return (
@@ -287,7 +295,6 @@ export default function BodyP3() {
             />
 
             <div className="botonBP">
-              <Retroceder text="Retroceder" page="page2" />
               <Avanzar text="Siguiente" />
             </div>
           </form>

@@ -3,6 +3,24 @@
   width: 120vh;
 }
 
+.error{
+  background-color: rgba(51, 52, 51, 0.615);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  padding: 0 20px;
+  border-radius: 5px;
+  height: 140px
+}
+
+.error h1 {
+  font-size: 150%;
+  letter-spacing: 3px;
+  color: aliceblue;
+  font-family: "Bebas Neue", cursive;
+}
+
 @media screen and (max-width: 1020px) {
   /* Contenedor general */
   .contenedorPrincipal {

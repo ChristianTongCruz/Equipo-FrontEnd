@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "../../../styles/pagesBody.css";
 
 import { ApiUrl } from "../../apiLink";
+import { getDatos } from "../../funciones";
 import Retroceder from "../../Botones/Retroceder";
 import Avanzar from "../../Botones/Avanzar";
 
@@ -64,6 +66,10 @@ export default function BodyP1() {
     setNumero_piso_vivienda(valor);
   };
 
+  //Variable que nos permite avanzar de página
+
+  const alone = useNavigate();
+
   //Funcion que envia las selecciones a la API
 
   const handleSubmit = (e) => {
@@ -84,6 +90,9 @@ export default function BodyP1() {
       .catch(function (error) {
         console.log(error);
       });
+
+    alone(`/page2`);
+    {/* window.location.href = `/page2` */}
   };
   return (
     <div className="BodyPage">
@@ -93,7 +102,6 @@ export default function BodyP1() {
         </div>
         <div className="contFormBP">
           <form className="formBP" onSubmit={handleSubmit}>
-
             {/* PREGUNTA 1 */}
             <SaveText
               titulo="1. Lugar de nacimiento: "
@@ -167,13 +175,23 @@ export default function BodyP1() {
             />
 
             <div className="botonBP">
-              <Retroceder text="Retroceder" page="" />
               <Avanzar text="Siguiente" page="page2" />
             </div>
-            
           </form>
         </div>
       </div>
     </div>
   );
 }
+
+export const ExportedCheck = () => {
+  const [check, setCheck] = useState(null);
+
+  useEffect(() => {
+    getDatos(setCheck).catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
+  return check;
+};

@@ -1,15 +1,50 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { ApiUrl } from '../apiLink'
 import "../../styles/inicioCuerpo.css";
 import Escudo from "../../img/Escudo.png";
 import TextoDos from "../../img/UniversidadTexto_2.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Cuerpo() {
+  //Variables para guardar selecciones
+  const [correo, setCorreo] = useState();
+  const [fecha, setFecha] = useState();
+
+  //Funcion que guarda selecciones
+  const handleChangePregunta1 = (e) => {
+    const { value } = e.target;
+    const valor = value.toUpperCase();
+    setCorreo(valor);
+  };
+
+  const handleChangePregunta2 = (e) => {
+    const { value } = e.target;
+    const valor = value.toUpperCase();
+    setFecha(valor);
+  };
+
   //Navegacion
   const alone = useNavigate();
 
-  const handleClick = () => {
-    alone(`/page1`);
+  //Funcion que envia las selecciones a la API
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(ApiUrl, {
+        correo,
+        fecha
+      })
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+      alone(`/page1`);
+      // window.location.href = `/page1`
   };
 
   return (
@@ -37,38 +72,22 @@ export default function Cuerpo() {
             <div className="titulo">
               <h1>¡Bienvenido!</h1>
             </div>
-            <form className="input">
+            <form className="input" onSubmit={handleSubmit}>
               <div className="ingreseDatos">
                 <h1>Ingrese sus datos</h1>
               </div>
               <div className="inputDatos">
                 <div className="Correo">
                   <label htmlFor="correo">Correo electronico:</label>
-                  <input
-                    id="correoInp"
-                    name="correo"
-                    type="text"
-                  />
-                </div>
-                <div className="Edad">
-                  <label htmlFor="edad">Edad:</label>
-                  <input
-                    id="edadInp"
-                    name="edad"
-                    type="number"
-                  />
+                  <input id="correoInp" name="correo" type="email" onChange={handleChangePregunta1} />
                 </div>
                 <div className="Fecha">
                   <label htmlFor="fecha">Fecha actual:</label>
-                  <input
-                    id="fechaInp"
-                    name="fecha"
-                    type="date"
-                  />
+                  <input id="fechaInp" name="fecha" type="date" onChange={handleChangePregunta2} />
                 </div>
               </div>
               <div className="boton">
-                <button type="button" onClick={handleClick}>
+                <button type="submit">
                   Siguiente
                 </button>
               </div>

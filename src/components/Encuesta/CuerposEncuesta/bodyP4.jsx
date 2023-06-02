@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom'
 import '../../../styles/pagesBody.css';
 
 import { ApiUrl } from "../../apiLink";
@@ -16,6 +17,7 @@ export default function BodyP4() {
   const [comunicacion_padres_hijo, setComunicacion_padres_hijo] = useState();
   const [comunicacion_hermanos, setComunicacion_hermanos] = useState();
 
+  //Funcion que guarda selecciones
   const handleChangePregunta1 = (e) => {
     const { value, checked } = e.target;
     const valor = value.toUpperCase();
@@ -48,6 +50,10 @@ export default function BodyP4() {
     }
   };
 
+   //Variable que nos permite avanzar de página
+
+   const alone = useNavigate();
+
   //Postear
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,6 +71,9 @@ export default function BodyP4() {
       .catch(function (error) {
         console.log(error);
       });
+
+    alone(`/page5`);
+    {/* window.location.href = `/page5` */}
   };
   return (
     <div className="BodyPage">
@@ -119,7 +128,6 @@ export default function BodyP4() {
             />
 
             <div className="botonBP">
-              <Retroceder text="Retroceder" page="page3" />
               <Avanzar text="Siguiente" page="page5" />
             </div>
           </form>

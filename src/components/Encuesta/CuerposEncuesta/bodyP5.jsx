@@ -126,7 +126,6 @@ export default function BodyP5() {
             />
 
             <div className="botonBP">
-              <Retroceder text="Retroceder" page="page4" />
               <Avanzar text="Siguiente" page=""/>
             </div>
           </form>
