@@ -174,7 +174,7 @@ export default function BodyP1() {
             />
 
             <div className="botonBP">
-              <Avanzar text="Siguiente" page="page2" />
+              <Avanzar text="Siguiente"/>
             </div>
           </form>
         </div>

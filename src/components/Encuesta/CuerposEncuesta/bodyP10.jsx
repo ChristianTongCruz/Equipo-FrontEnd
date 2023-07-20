@@ -9,22 +9,23 @@ import Avanzar from "../../Botones/Avanzar";
 
 import SaveRadioYBox from '../../Saves/SaveRadioYBox'
 
-export default function BodyP5() {
-
+export default function BodyP10() {
+  
   //Variables para guardar selecciones
-  const [medios_comunicacion_acceso_familia, setMedios_comunicacion_acceso_familia] = useState([]);
-  const [medio_transporte_utiliza_localidad, setMedio_transporte_utiliza_localidad] = useState([]);
-  const [via_predominante_localidad, setVia_predominante_localidad] = useState();
-  const [buen_estado_via, setBuen_estado_via] = useState();
+  const [hogar_tiene, setHogar_tiene] = useState([]);
+  const [localidad_cuenta, setLocalidad_cuenta] = useState([]);
+  const [utiliza_servicio_internet, setUtiliza_servicio_internet] = useState();
+  const [tipo_informacion_internet, setTipo_informacion_internet] = useState([]);
+  const [calidad_servicio_internet, setCalidad_servicio_internet] = useState();
 
   //Funcion que guarda selecciones
   const handleChangePregunta1 = (e) => {
     const { value, checked } = e.target;
     const valor = value.toUpperCase();
     if (checked) {
-      setMedios_comunicacion_acceso_familia([...medios_comunicacion_acceso_familia, valor]);
+      setHogar_tiene([...hogar_tiene, valor]);
     } else {
-      setMedios_comunicacion_acceso_familia(medios_comunicacion_acceso_familia.filter((o) => o !== valor));
+      setHogar_tiene(hogar_tiene.filter((o) => o !== valor));
     }
   };
 
@@ -32,9 +33,9 @@ export default function BodyP5() {
     const { value, checked } = e.target;
     const valor = value.toUpperCase();
     if (checked) {
-      setMedio_transporte_utiliza_localidad([...medio_transporte_utiliza_localidad, valor]);
+      setLocalidad_cuenta([...localidad_cuenta, valor]);
     } else {
-      setMedio_transporte_utiliza_localidad(medio_transporte_utiliza_localidad.filter((o) => o !== valor));
+      setLocalidad_cuenta(localidad_cuenta.filter((o) => o !== valor));
     }
   };
 
@@ -42,7 +43,7 @@ export default function BodyP5() {
     const { value, checked } = e.target;
     const valor = value.toUpperCase();
     if (checked) {
-      setVia_predominante_localidad(valor);
+      setUtiliza_servicio_internet(valor);
     }
   };
 
@@ -50,23 +51,35 @@ export default function BodyP5() {
     const { value, checked } = e.target;
     const valor = value.toUpperCase();
     if (checked) {
-      setBuen_estado_via(valor);
+      setTipo_informacion_internet([...tipo_informacion_internet, valor]);
+    } else {
+      setTipo_informacion_internet(tipo_informacion_internet.filter((o) => o !== valor));
+    }
+  };
+
+  const handleChangePregunta5 = (e) => {
+    const { value, checked } = e.target;
+    const valor = value.toUpperCase();
+    if (checked) {
+      setCalidad_servicio_internet(valor);
     }
   };
 
   //Variable que nos permite avanzar de página
+
   const alone = useNavigate();
 
-  //Funcion que envia las selecciones a la API
+  //Postear
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios
       .post(ApiUrl, {
-        medios_comunicacion_acceso_familia,
-        medio_transporte_utiliza_localidad,
-        via_predominante_localidad,
-        buen_estado_via,
+        hogar_tiene,
+        localidad_cuenta,
+        utiliza_servicio_internet,
+        tipo_informacion_internet,
+        calidad_servicio_internet
       })
       .then(function (response) {
         console.log(response.data);
@@ -75,25 +88,24 @@ export default function BodyP5() {
         console.log(error);
       });
 
-      alone(`/page6`);
-    {/* window.location.href = `/page6` */}
+    alone(`/page5`);
+    {/* window.location.href = `/page5` */}
   };
-
   return (
     <div className="BodyPage">
       <div className="contBP">
         <div className="tituloBP">
-          <h1>COMUNICACIÓN INTRAFAMILIAR</h1>
+          <h1>Aspectos de tecnologias de la información y comunicación</h1>
         </div>
         <div className="contFormBP">
           <form className="formBP" onSubmit={handleSubmit}>
 
             {/* PREGUNTA 1 */}
             <SaveRadioYBox
-              titulo="1. ¿A qué medios de comunicación tiene acceso la familia? (Puede marcar más de una opción)"
-              htmlFor = "pr1_P5"
+              titulo="1. Su hogar tiene: (Puede marcar más de una alternativa)"
+              htmlFor="p1_P10"
               start={0}
-              end={7}
+              end={14}
               className="inputCheckbox"
               type="checkbox"
               handle={handleChangePregunta1}
@@ -101,10 +113,10 @@ export default function BodyP5() {
 
             {/* PREGUNTA 2 */}
             <SaveRadioYBox
-              titulo="2. ¿Qué medio de transporte utiliza para ir a otra localidad más cercana? (Puede marcar más de una opción)"
-              htmlFor = "pr2_P5"
-              start={7}
-              end={13}
+              titulo="2. En su localidad cuenta con los servicios que a continuación se menciona: (Puede marcar más de una alternativa)"
+              htmlFor="p2_P10"
+              start={15}
+              end={19}
               className="inputCheckbox"
               type="checkbox"
               handle={handleChangePregunta2}
@@ -112,10 +124,10 @@ export default function BodyP5() {
 
             {/* PREGUNTA 3 */}
             <SaveRadioYBox
-              titulo="3. ¿Cuál es la vía predominante para arribar a su localidad?"
-              htmlFor = "pr3_P5"
-              start={13}
-              end={19}
+              titulo="3. ¿Utiliza el servicio de internet?"
+              start={9}
+              end={11}
+              htmlFor = "pr3_P10"
               className="inputRadio"
               type="radio"
               handle={handleChangePregunta3}
@@ -123,17 +135,28 @@ export default function BodyP5() {
 
             {/* PREGUNTA 4 */}
             <SaveRadioYBox
-              titulo="4. ¿Se encuentra en buen estado dicha vía?"
-              htmlFor = "pr4_P5"
-              start={19}
-              end={21}
-              className="inputRadio"
-              type="radio"
+              titulo="4. ¿Que tipo de información busca en internet? (Puede marcar más de una alternativa)"
+              htmlFor="p4_P10"
+              start={12}
+              end={19}
+              className="inputCheckbox"
+              type="checkbox"
               handle={handleChangePregunta4}
             />
 
+            {/* PREGUNTA 5 */}
+            <SaveRadioYBox
+              titulo="5. ¿Como considera el servicio de internet?"
+              start={20}
+              end={23}
+              htmlFor = "pr5_P10"
+              className="inputRadio"
+              type="radio"
+              handle={handleChangePregunta5}
+            />
+
             <div className="botonBP">
-              <Avanzar text="Siguiente" />
+              <Avanzar text="Siguiente" page="page5" />
             </div>
           </form>
         </div>
@@ -142,7 +165,7 @@ export default function BodyP5() {
   );
 }
 
-export const ExportedCheck5 = () => {
+export const ExportedCheck4 = () => {
   const [check, setCheck] = useState(null);
 
   useEffect(() => {
