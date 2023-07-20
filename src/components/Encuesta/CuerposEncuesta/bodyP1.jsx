@@ -101,7 +101,7 @@ export default function BodyP1() {
         </div>
         <div className="contFormBP">
           <form className="formBP" onSubmit={handleSubmit}>
-            {/* PREGUNTA 1 */}
+            {/* PREGUNTA 1s */}
             <SaveText
               titulo="1. Lugar de nacimiento: "
               htmlFor="pr1_P1"
